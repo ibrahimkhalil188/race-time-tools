@@ -9,7 +9,7 @@ const MyOrder = () => {
     const [user] = useAuthState(auth);
     const email = user?.email
     const url = `http://localhost:5000/order/${email}`
-    const { data: myorder } = useQuery("myorder", () => fetch(url).then(res => res.json()))
+    const { data: myorder, refetch } = useQuery("myorder", () => fetch(url).then(res => res.json()))
     return (
         <div>
             <div >
@@ -41,6 +41,7 @@ const MyOrder = () => {
                                     >Cancel</label>
                                     <OrderCancelModel
                                         item={item}
+                                        refetch={refetch}
                                     ></OrderCancelModel>
                                 </td>
                             </tr>

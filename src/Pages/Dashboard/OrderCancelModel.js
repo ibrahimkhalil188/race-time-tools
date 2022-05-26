@@ -1,18 +1,23 @@
 import React from 'react';
 
-const OrderCancelModel = ({ item }) => {
+const OrderCancelModel = ({ item, refetch }) => {
     const { _id, productName } = item
 
-    /* const url = `http://localhost:5000/order/${_id}`
-    fetch(url, {
-        method: "DELETE",
-        headers: {
-            "content-type": "application/json"
-        },
-        body: JSON.stringify(item)
-    })
-        .then(res => res.json())
-        .then(data => console.log(data)) */
+    const handleCancel = () => {
+        const url = `http://localhost:5000/order/${_id}`
+        fetch(url, {
+            method: "DELETE",
+            headers: {
+                "content-type": "application/json"
+            },
+            body: JSON.stringify(item)
+        })
+            .then(res => res.json())
+            .then(data =>
+                refetch())
+    }
+
+
 
     return (
         <div>
@@ -24,7 +29,7 @@ const OrderCancelModel = ({ item }) => {
                     <p class="py-4 text-xl text-center text-warning">Do You Want To Cancel Your   <span className='text-red-600 text-2xl text-bold'>{productName}</span> Order ?</p>
                     <div class="modal-action">
                         <label
-                            for="Order-Cancel-Modal" class="btn btn-error"
+                            for="Order-Cancel-Modal" class="btn btn-error" onClick={handleCancel}
                         >Yes!</label>
                     </div>
                 </div>
