@@ -3,6 +3,7 @@ import { useAuthState } from 'react-firebase-hooks/auth';
 import auth from '../../firebase.init';
 import { useQuery } from 'react-query';
 import OrderCancelModel from './OrderCancelModel';
+import { Link } from 'react-router-dom';
 
 const MyOrder = () => {
 
@@ -34,7 +35,7 @@ const MyOrder = () => {
                                 <td>{item.productName}</td>
                                 <td>{item.price}</td>
                                 <td>{item.quantity}</td>
-                                <td> <button class={`btn btn-xs btn-warning ${item.status === "paid" ? "btn-success" : "btn-warning"}`}>{item.status ? item.status : "unpaid"}</button></td>
+                                <td> <button class="btn btn-xs btn-warning"><Link to={`payment/${item._id}`}>Pay</Link></button></td>
                                 <td>
                                     <label
                                         for="Order-Cancel-Modal" class="btn btn-xs btn-warning"

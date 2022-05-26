@@ -10,6 +10,7 @@ import AddReview from './Pages/Dashboard/AddReview';
 import Dashboard from './Pages/Dashboard/Dashboard';
 import MyOrder from './Pages/Dashboard/MyOrder';
 import MyProfile from './Pages/Dashboard/MyProfile';
+import Payment from './Pages/Dashboard/Payment';
 import Home from './Pages/Home/Home';
 import Purchase from './Pages/Home/Purchase';
 import Footer from './Pages/Shared/Footer';
@@ -36,6 +37,7 @@ function App() {
             <Dashboard></Dashboard>
           </RequireAuth>}>
           <Route path='myorder' element={<MyOrder></MyOrder>} />
+          <Route path='payment/:id' element={<Payment></Payment>} />
           <Route path='myprofile' element={<MyProfile></MyProfile>} />
           <Route path='addreview' element={<AddReview></AddReview>} />
         </Route>
