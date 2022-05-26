@@ -1,0 +1,52 @@
+[
+    {
+        "_id": 1,
+        "name": "Gear",
+        "model": "D12",
+        "description": "Metal chain",
+        "quantity": 1000,
+        "minOrder": 10,
+        "price": 1820,
+        "image": "https://i.ibb.co/BN3DjTc/chain-Product.webp"
+    },
+    {
+        "_id": 1,
+        "name": "Gear",
+        "model": "D12",
+        "description": "Metal chain",
+        "quantity": 1000,
+        "minOrder": 10,
+        "price": 1820,
+        "image": "https://i.ibb.co/BN3DjTc/chain-Product.webp"
+    },
+    {
+        "_id": 1,
+        "name": "Gear",
+        "model": "D12",
+        "description": "Metal chain",
+        "quantity": 1000,
+        "minOrder": 10,
+        "price": 1820,
+        "image": "https://i.ibb.co/BN3DjTc/chain-Product.webp"
+    },
+    {
+        "_id": 1,
+        "name": "Gear",
+        "model": "D12",
+        "description": "Metal chain",
+        "quantity": 1000,
+        "minOrder": 10,
+        "price": 1820,
+        "image": "https://i.ibb.co/BN3DjTc/chain-Product.webp"
+    },
+    {
+        "_id": 1,
+        "name": "Gear",
+        "model": "D12",
+        "description": "Metal chain",
+        "quantity": 1000,
+        "minOrder": 10,
+        "price": 1820,
+        "image": "https://i.ibb.co/BN3DjTc/chain-Product.webp"
+    }
+]
