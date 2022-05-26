@@ -36,7 +36,8 @@ function App() {
           <RequireAuth>
             <Dashboard></Dashboard>
           </RequireAuth>}>
-          <Route path='myorder' element={<MyOrder></MyOrder>} />
+          <Route index element={<MyOrder></MyOrder>} />
+          <Route path="myorder" element={<MyOrder></MyOrder>} />
           <Route path='payment/:id' element={<Payment></Payment>} />
           <Route path='myprofile' element={<MyProfile></MyProfile>} />
           <Route path='addreview' element={<AddReview></AddReview>} />

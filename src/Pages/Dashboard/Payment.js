@@ -1,45 +1,25 @@
+import { Elements } from '@stripe/react-stripe-js';
+import { loadStripe } from '@stripe/stripe-js';
 import React from 'react';
 import { useQuery } from 'react-query';
 import { useParams } from 'react-router-dom';
 import Loading from '../Shared/Loading';
+import CheckoutForm from './CheckoutForm';
+
+const stripePromise = loadStripe('pk_test_51L3dQQFSCgLXqw7Ei87Y4WgyookdfFtpn7g2Uqh63r5ridy8vVyOPFe8QhRs2bbeJFFLR24Lgsc4xwaSXHh1wTez00ldl63QfE')
 
 const Payment = () => {
     const { id } = useParams()
     const url = `http://localhost:5000/order/${id}`
-    const { data: orderItem, isLoading } = useQuery("orderItem", () => fetch(url).then(res => res.json()))
-    console.log(orderItem)
+    const { data: orderItem, isLoading } = useQuery(["orderItem", id], () => fetch(url).then(res => res.json()))
+    if (isLoading) {
+        return <Loading></Loading>
+    }
     return (
-        <div>
-            <div class="hero min-h-screen bg-base-200">
-                <div class="hero-content flex-col lg:flex-row-reverse">
-                    <div class="text-center lg:text-left">
-                        <h1 class="text-5xl font-bold">Login now!</h1>
-                        <p class="py-6">Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.</p>
-                    </div>
-                    <div class="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
-                        <div class="card-body">
-                            <div class="form-control">
-                                <label class="label">
-                                    <span class="label-text">Email</span>
-                                </label>
-                                <input type="text" placeholder="email" class="input input-bordered" />
-                            </div>
-                            <div class="form-control">
-                                <label class="label">
-                                    <span class="label-text">Password</span>
-                                </label>
-                                <input type="text" placeholder="password" class="input input-bordered" />
-                                <label class="label">
-                                    <a href="#" class="label-text-alt link link-hover">Forgot password?</a>
-                                </label>
-                            </div>
-                            <div class="form-control mt-6">
-                                <button class="btn btn-primary">Login</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        <div className='w-1/2 h-24 bg-base-200'>
+            <Elements stripe={stripePromise}>
+                <CheckoutForm />
+            </Elements>
         </div>
     );
 };
