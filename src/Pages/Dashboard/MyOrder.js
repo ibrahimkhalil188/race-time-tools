@@ -35,7 +35,7 @@ const MyOrder = () => {
                                 <td>{item.productName}</td>
                                 <td>{item.price}</td>
                                 <td>{item.quantity}</td>
-                                <td> <button class="btn btn-xs btn-warning"><Link to={`payment/${item._id}`}>Pay</Link></button></td>
+                                <td> <button class="btn btn-xs btn-warning"><Link to={`/dashboard/payment/${item._id}`}>Pay</Link></button></td>
                                 <td>
                                     <label
                                         for="Order-Cancel-Modal" class="btn btn-xs btn-warning"
