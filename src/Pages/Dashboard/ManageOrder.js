@@ -3,7 +3,7 @@ import { useQuery } from 'react-query';
 import { toast } from 'react-toastify';
 
 const ManageOrder = () => {
-    const { data: allorder, refetch } = useQuery("allorder", () => fetch("http://localhost:5000/order").then(res => res.json()))
+    const { data: allorder, refetch } = useQuery("allorder", () => fetch("http://localhost:5000/allorder").then(res => res.json()))
 
 
     const deleteOrder = id => {
