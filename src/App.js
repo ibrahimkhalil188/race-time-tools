@@ -18,7 +18,7 @@ import Navbar from './Pages/Shared/Navbar';
 
 function App() {
   return (
-    <div className='container mx-auto'>
+    <div className='container mx-auto overflow-x-hidden'>
       <Navbar></Navbar>
       <Routes>
         <Route path='/' element={<Home></Home>} />

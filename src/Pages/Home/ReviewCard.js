@@ -1,7 +1,8 @@
 import React from 'react';
-
+import { AiFillStar } from 'react-icons/ai'
 const ReviewCard = ({ singleReview }) => {
-    const { name, image, review } = singleReview
+    const { name, image, review, rating } = singleReview
+
     return (
         <div className='hover:shadow-2xl hover:bg-white'>
             <div className="card bg-base-100 shadow-xl border-2">
@@ -13,6 +14,9 @@ const ReviewCard = ({ singleReview }) => {
                 <div className="card-body items-center text-center">
                     <h2 className="card-title">{name}</h2>
                     <p>{review}</p>
+                    {
+                        Array(rating).map(star => <AiFillStar star={star}></AiFillStar>)
+                    }
                 </div>
             </div>
         </div>
