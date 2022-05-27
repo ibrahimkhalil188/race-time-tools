@@ -7,11 +7,8 @@ import { useForm } from 'react-hook-form';
 import Loading from '../Shared/Loading';
 import { toast } from 'react-toastify';
 const Purchase = () => {
-    const [user, loading] = useAuthState(auth);
+    const [user] = useAuthState(auth);
 
-    if (loading) {
-        <Loading></Loading>
-    }
 
     const { register, handleSubmit, reset } = useForm();
 
@@ -19,10 +16,12 @@ const Purchase = () => {
     const url = `http://localhost:5000/products/${id.id}`
     const { data: purchase, refetch } = useQuery("purchase", () => fetch(url).then(res => res.json()))
 
+
+
     const [quantityCount, setQuantityCount] = useState(10)
-    const [price, setPrice] = useState(purchase?.price)
+    const [price, setPrice] = useState(1)
 
-
+    console.log(quantityCount, price)
     const onSubmit = data => {
         const quantity = purchase?.quantity - data.quantity
         const newQuantity = { quantity }
@@ -56,6 +55,7 @@ const Purchase = () => {
 
     }
 
+
     return (
         <div>
             <div class="hero min-h-screen bg-base-200">
@@ -66,7 +66,7 @@ const Purchase = () => {
                             <img src={purchase?.image} class="max-w-sm rounded-lg shadow-2xl" alt="" />
                             <div class="py-6 ml-8">
                                 <h1 className='my-4 text-3xl text-primary'>Product description</h1>
-                                <p >Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.</p>
+                                <p >{purchase?.description}</p>
                                 <span className='btn btn-primary text-xl my-4'>Available quantity: {purchase?.quantity}</span>
                                 <span className='btn btn-primary text-xl'>Price: ${purchase?.price}</span>
                             </div>
@@ -137,7 +137,7 @@ const Purchase = () => {
                                         {...register("quantity", { required: true })}
 
                                         type="text"
-                                        placeholder={`Minimum order quantity ${purchase?.minOrder} pice`}
+                                        placeholder={`Minimum order quantity 10 pice`}
                                         class="input input-bordered"
                                         onChange={(e) => {
                                             setQuantityCount(e.target.value)
@@ -161,7 +161,7 @@ const Purchase = () => {
                                         class="input input-bordered" />
                                 </div>
                                 <div class="form-control mt-6">
-                                    <button class="btn btn-primary" type='submit' disabled={quantityCount < purchase?.minOrder || quantityCount > purchase?.quantity}>Place Order</button>
+                                    <button class="btn btn-primary" type='submit' disabled={purchase?.quantity < quantityCount || quantityCount < 10}>Place Order</button>
 
                                 </div>
 

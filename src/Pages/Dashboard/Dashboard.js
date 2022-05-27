@@ -40,6 +40,9 @@ const Dashboard = () => {
                         {
                             admin || <li> <Link to='addproduct'>Add Product</Link></li>
                         }
+                        {
+                            admin || <li> <Link to='manageproduct'>Manage Product</Link></li>
+                        }
 
                     </ul>
                 </div>

@@ -8,12 +8,12 @@ const Product = ({ item }) => {
     return (
         <div>
             <Fade left>
-                <div className="card shadow-xl rounded-xl">
-                    <figure><img src={image} alt="Shoes" /></figure>
-                    <div className="card-body border">
+                <div className="card shadow-xl rounded-xl border-2">
+                    <figure><img className='h-72' src={image} alt="" /></figure>
+                    <div className="card-body border border-t-2">
                         <h2 className="card-title">{name}</h2>
                         <div className='text-lg font-serif'>
-                            <p>Description: {description}</p>
+                            <p>Description: {description.slice(0, 50)}</p>
                             <p>Minimum Order: {minOrder}</p>
                             <p>Available: {quantity}</p>
                             <p>Price: ${price}</p>
