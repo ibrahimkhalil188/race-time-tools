@@ -32,7 +32,7 @@ const Register = () => {
 
     const onSubmit = async data => {
         await createUserWithEmailAndPassword(data.email, data.password)
-        await updateProfile({ displayName: data.name })
+        await updateProfile({ displayName: data.name, })
     };
     console.log(user)
     useEffect(() => {

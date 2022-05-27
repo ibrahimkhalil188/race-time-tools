@@ -71,32 +71,7 @@ const Purchase = () => {
                                 <span className='btn btn-primary text-xl'>Price: ${purchase?.price}</span>
                             </div>
                         </div>
-                        {/* <div className='mx-6'>
-                            <label class="label">
-                                <span class="label-text">Enter amount</span>
-                            </label>
-                            <label class="input-group">
-                                <span className='text-2xl btn btn-primary ' disabled={quantityCount < 11} onClick={() => {
-                                    setQuantityCount(quantityCount - 1)
 
-                                    setPrice((quantityCount - 1) * purchase?.price)
-                                }}><AiOutlineMinus /></span>
-
-                                <input class="px-6" value={quantityCount} />
-
-                                <span className='text-2xl btn btn-primary' disabled={quantityCount > 1000} onClick={() => {
-                                    setQuantityCount(quantityCount + 1)
-                                    setPrice((quantityCount + 1) * purchase?.price)
-                                }}><AiOutlinePlus /></span>
-
-                                <span>Price: ${price === 1 ? (purchase?.price * quantityCount) : price}</span>
-                            </label>
-                            <label class="label">
-                                <span class="label-text">{quantityCount > purchase?.quantity ? "Your entered amount is not available" : " "}
-                                    <span class="label-text">{quantityCount < purchase?.minOrder ? `Minimum ${purchase?.minOrder} pice order acceptable` : " "}</span>
-                                </span>
-                            </label>
-                        </div> */}
 
                     </div>
 

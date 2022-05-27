@@ -25,6 +25,7 @@ const Login = () => {
     let from = location.state?.from?.pathname || "/";
 
     const [token] = UseToken(user || guser)
+    console.log(guser)
     const onSubmit = data => {
         signInWithEmailAndPassword(data.email, data.password)
     };
