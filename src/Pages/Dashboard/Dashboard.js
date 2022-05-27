@@ -1,7 +1,14 @@
 import React from 'react';
+import { useAuthState } from 'react-firebase-hooks/auth';
+import { useQuery } from 'react-query';
 import { Link, Outlet } from 'react-router-dom';
+import auth from '../../firebase.init';
 
 const Dashboard = () => {
+    const [user] = useAuthState(auth)
+    const email = user?.email
+    const { data: currentUser } = useQuery("currentUser", () => fetch(`http://localhost:5000/user/${email}`).then(res => res.json()))
+
 
     return (
         <div className='container'>
@@ -19,11 +26,14 @@ const Dashboard = () => {
                         <li><Link to='myorder'>My Order</Link></li>
                         <li className='my-2'><Link to='myprofile'>My Profile</Link></li>
                         <li><Link to='addreview'>Add Review</Link></li>
+                        {
+                            currentUser?.role === "admin" && <li> <Link to='alluser'>All User</Link></li>
+                        }
 
                     </ul>
                 </div>
             </div>
-        </div>
+        </div >
     );
 };
 

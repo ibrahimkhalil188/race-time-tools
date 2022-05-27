@@ -42,16 +42,12 @@ const AddReview = () => {
                             <span class="label-text">Your Ratings</span>
                         </label>
                         <>
-                            {/* <span className='text-2xl btn btn-primary ' disabled={starCount < 2} onClick={() => {
-                                setStarCount(starCount - 1)
-                            }}><AiOutlineMinus /></span> */}
+
 
                             <input
                                 class="input input-primary" onChange={e => setRating(e.target.value)} type="number" min="1" max='5' required />
 
-                            {/*  <span className='text-2xl btn btn-primary' disabled={starCount > 4} onClick={() => {
-                                setStarCount(starCount + 1)
-                            }}><AiOutlinePlus /></span> */}
+
 
                         </>
                     </div>

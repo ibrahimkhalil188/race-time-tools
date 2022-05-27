@@ -9,10 +9,10 @@ const MyProfile = () => {
     const [user] = useAuthState(auth)
     const { register, handleSubmit, reset } = useForm();
     const email = user?.email
-
+    const name = user?.displayName
     const url = `http://localhost:5000/user/${email}`
     const onSubmit = data => {
-        const updateUser = { ...data, email }
+        const updateUser = { ...data, email, name }
         fetch(url, {
             method: "PUT",
             headers: {
