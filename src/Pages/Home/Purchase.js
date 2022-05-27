@@ -26,7 +26,7 @@ const Purchase = () => {
     const onSubmit = data => {
         const quantity = purchase?.quantity - data.quantity
         const newQuantity = { quantity }
-        const order = { email: data.email, productName: purchase?.name, price: price, quantity: data.quantity, phoneNumber: data.phone, address: data.address, status: "unpaid" }
+        const order = { email: data.email, productName: purchase?.name, price: price, quantity: data.quantity, phoneNumber: data.phone, address: data.address }
 
         fetch('http://localhost:5000/order', {
             method: "POST",

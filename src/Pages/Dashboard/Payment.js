@@ -16,10 +16,23 @@ const Payment = () => {
         return <Loading></Loading>
     }
     return (
-        <div className='w-1/2 h-24 bg-base-200'>
-            <Elements stripe={stripePromise}>
-                <CheckoutForm />
-            </Elements>
+        <div>
+            <div className='my-6'>
+                <div class="card w-1/2 bg-base-100 shadow-xl">
+                    <div class="card-body">
+                        <h2 class="card-title">Card title!</h2>
+                        <p>If a dog chews shoes whose shoes does he choose?</p>
+                    </div>
+                </div>
+            </div>
+            <div class="card w-1/2 bg-base-100 shadow-xl">
+                <div className='card-body'>
+                    <Elements stripe={stripePromise}>
+                        <CheckoutForm />
+                    </Elements>
+                </div>
+
+            </div>
         </div>
     );
 };
