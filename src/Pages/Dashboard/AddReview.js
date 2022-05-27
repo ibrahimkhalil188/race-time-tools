@@ -1,17 +1,15 @@
 import React, { useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
-import { AiOutlineMinus, AiOutlinePlus } from 'react-icons/ai'
 import { toast } from 'react-toastify';
 import auth from '../../firebase.init';
 
 const AddReview = () => {
     const [user] = useAuthState(auth)
-    const [starCount, setStarCount] = useState(0)
     const [review, setReview] = useState(" ")
     const [rating, setRating] = useState(0)
     const name = user?.displayName
-    const image = user?.photoURL
-    console.log(rating)
+    const image = user?.photoURL || "https://cdn.pixabay.com/photo/2020/07/01/12/58/icon-5359553_1280.png"
+
     const handleSubmit = e => {
         e.preventDefault()
         const data = { review, rating, name, image }
@@ -28,6 +26,7 @@ const AddReview = () => {
                     toast.success("Thanks for give us review")
                 }
             })
+
     }
     return (
         <div>

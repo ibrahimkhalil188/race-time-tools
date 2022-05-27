@@ -1,14 +1,13 @@
-import React, { useState } from 'react';
-import { useAuthState } from 'react-firebase-hooks/auth';
+import React from 'react';
+
 import { useQuery } from 'react-query';
 import { toast } from 'react-toastify';
-import auth from '../../firebase.init';
+
 
 const AllUser = () => {
-    const [user] = useAuthState(auth)
 
     const { data: alluser, refetch } = useQuery("alluser", () => fetch("http://localhost:5000/user").then(res => res.json()))
-    console.log(alluser)
+
     const makeAdmin = (email) => {
         fetch(`http://localhost:5000/user/admin/${email}`, {
             method: "PUT",
@@ -19,6 +18,19 @@ const AllUser = () => {
             .then(res => res.json())
             .then(data => {
                 toast.success("Admin added")
+                refetch()
+            })
+    }
+
+    const deleteUser = id => {
+        fetch(`http://localhost:5000/user/${id}`, {
+            method: "DELETE",
+            headers: {
+                "content-type": "application/json"
+            }
+        }).then(res => res.json())
+            .then(data => {
+                toast.success("User deleted success")
                 refetch()
             })
     }
@@ -50,7 +62,7 @@ const AllUser = () => {
                                         <button className='btn btn-xs ' onClick={() => makeAdmin(singleUser?.email)}>Make Admin</button>
                                     }</td>
                                 <td>
-                                    <button className='btn btn-warning btn-xs'>Delete</button>
+                                    <button className='btn btn-warning btn-xs' onClick={() => deleteUser(singleUser?._id)}>Delete</button>
                                 </td>
 
                             </tr>

@@ -6,9 +6,11 @@ import Login from './Pages/Authentication/Login';
 import Register from './Pages/Authentication/Register';
 import RequireAuth from './Pages/Authentication/RequireAuth';
 import Blogs from './Pages/Blogs/Blogs';
+import AddProduct from './Pages/Dashboard/AddProduct';
 import AddReview from './Pages/Dashboard/AddReview';
 import AllUser from './Pages/Dashboard/AllUser';
 import Dashboard from './Pages/Dashboard/Dashboard';
+import ManageOrder from './Pages/Dashboard/ManageOrder';
 import MyOrder from './Pages/Dashboard/MyOrder';
 import MyProfile from './Pages/Dashboard/MyProfile';
 import Payment from './Pages/Dashboard/Payment';
@@ -43,6 +45,8 @@ function App() {
           <Route path='myprofile' element={<MyProfile></MyProfile>} />
           <Route path='addreview' element={<AddReview></AddReview>} />
           <Route path='alluser' element={<AllUser></AllUser>} />
+          <Route path='manageorder' element={<ManageOrder></ManageOrder>} />
+          <Route path='addproduct' element={<AddProduct></AddProduct>} />
         </Route>
         <Route path='/about' element={<About></About>} />
         <Route path='/login' element={<Login></Login>} />
