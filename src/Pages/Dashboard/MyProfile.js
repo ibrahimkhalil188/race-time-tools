@@ -58,7 +58,7 @@ const MyProfile = () => {
 
                     <input type="checkbox" id="update-profile-modal" class="modal-toggle" />
                     <div class="modal modal-bottom sm:modal-middle">
-                        <form onSubmit={() => handleSubmit(onSubmit)} class="modal-box">
+                        <form onSubmit={handleSubmit(onSubmit)} class="modal-box">
 
                             <label for="update-profile-modal" class="btn btn-sm btn-circle absolute right-2 top-2">✕</label>
 
