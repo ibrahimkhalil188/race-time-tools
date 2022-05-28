@@ -32,16 +32,16 @@ const Dashboard = () => {
                             admin || <li><Link to='addreview'>Add Review</Link></li>
                         }
                         {
-                            admin || <li> <Link to='alluser'>All User</Link></li>
+                            admin && <li> <Link to='alluser'>All User</Link></li>
                         }
                         {
-                            admin || <li className='my-2'> <Link to='manageorder'>Manage Order</Link></li>
+                            admin && <li className='my-2'> <Link to='manageorder'>Manage Order</Link></li>
                         }
                         {
-                            admin || <li> <Link to='addproduct'>Add Product</Link></li>
+                            admin && <li> <Link to='addproduct'>Add Product</Link></li>
                         }
                         {
-                            admin || <li> <Link to='manageproduct'>Manage Product</Link></li>
+                            admin && <li> <Link to='manageproduct'>Manage Product</Link></li>
                         }
 
                     </ul>

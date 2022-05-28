@@ -82,7 +82,7 @@ const MyProfile = () => {
                                 type="number" placeholder="Write your Phone number" class="input input-bordered input-md w-full max-w-xs my-2" />
                             <input
                                 {...register("linkedin", { required: true })}
-                                type="text" placeholder="Write your Phone number" class="input input-bordered input-md w-full max-w-xs my-2" />
+                                type="text" placeholder="Your LinkedIn profile link" class="input input-bordered input-md w-full max-w-xs my-2" />
 
 
                             <div class="modal-action">
