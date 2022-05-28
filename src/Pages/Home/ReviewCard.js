@@ -14,9 +14,9 @@ const ReviewCard = ({ singleReview }) => {
                 <div className="card-body items-center text-center">
                     <h2 className="card-title">{name}</h2>
                     <p>{review}</p>
-                    {
-                        Array(rating).map(star => <AiFillStar star={star}></AiFillStar>)
-                    }
+                    <div className='flex justify-center items-center text-xl'>
+                        {rating}<AiFillStar className='text-warning'></AiFillStar>
+                    </div>
                 </div>
             </div>
         </div>

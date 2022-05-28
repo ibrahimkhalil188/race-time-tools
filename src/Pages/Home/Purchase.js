@@ -136,7 +136,7 @@ const Purchase = () => {
                                     <input
                                         {...register("quantity", { required: true })}
 
-                                        type="text"
+                                        type="number"
                                         placeholder={`Minimum order quantity 10 pice`}
                                         class="input input-bordered"
                                         onChange={(e) => {
@@ -158,7 +158,7 @@ const Purchase = () => {
                                         value={price}
                                         type="number"
                                         placeholder="Price"
-                                        class="input input-bordered" />
+                                        class="input input-bordered" required />
                                 </div>
                                 <div class="form-control mt-6">
                                     <button class="btn btn-primary" type='submit' disabled={purchase?.quantity < quantityCount || quantityCount < 10}>Place Order</button>

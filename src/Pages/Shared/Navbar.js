@@ -16,7 +16,9 @@ const Navbar = () => {
         <>
             <li><Link to="/">Home</Link></li>
             <li><Link to="/Blogs">Blogs</Link></li>
-            <li><Link to="/Dashboard">Dashboard</Link></li>
+            {
+                user ? <li><Link to="/Dashboard">Dashboard</Link></li> : ""
+            }
             <li><Link to="/About">About</Link></li>
             {user ? <div class="dropdown dropdown-end dropdown-hover">
                 <div class="avatar">

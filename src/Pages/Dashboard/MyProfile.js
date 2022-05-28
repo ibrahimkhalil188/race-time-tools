@@ -51,8 +51,9 @@ const MyProfile = () => {
                         <h1>Email: &nbsp; {user?.email}</h1>
                         <h1>Bio:  &nbsp;  {userInfo?.bio}</h1>
                         <h1>Address:  &nbsp;  {userInfo?.address}</h1>
-                        <h1>Institute: &nbsp; {userInfo?.institute}</h1>
+                        <h1>Education: &nbsp; {userInfo?.institute}</h1>
                         <h1>Data of birth: &nbsp; {userInfo?.dateOfBirth}</h1>
+                        <h1>LinkedIn Profile: &nbsp; {userInfo?.linkedin}</h1>
                     </div>
 
 
@@ -79,8 +80,10 @@ const MyProfile = () => {
                             <input
                                 {...register("phone", { required: true })}
                                 type="number" placeholder="Write your Phone number" class="input input-bordered input-md w-full max-w-xs my-2" />
+                            <input
+                                {...register("linkedin", { required: true })}
+                                type="text" placeholder="Write your Phone number" class="input input-bordered input-md w-full max-w-xs my-2" />
 
-                            { }
 
                             <div class="modal-action">
                                 <input type="submit" for="update-profile-modal" class="btn" value="Update" />

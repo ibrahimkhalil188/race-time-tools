@@ -17,6 +17,7 @@ import MyProfile from './Pages/Dashboard/MyProfile';
 import Payment from './Pages/Dashboard/Payment';
 import Home from './Pages/Home/Home';
 import Purchase from './Pages/Home/Purchase';
+import NotFound from './Pages/NotFound/NotFound';
 import Footer from './Pages/Shared/Footer';
 import Navbar from './Pages/Shared/Navbar';
 
@@ -53,7 +54,7 @@ function App() {
         <Route path='/about' element={<About></About>} />
         <Route path='/login' element={<Login></Login>} />
         <Route path='/register' element={<Register></Register>} />
-
+        <Route path='*' element={<NotFound></NotFound>}></Route>
       </Routes>
       <ToastContainer />
       <Footer></Footer>
