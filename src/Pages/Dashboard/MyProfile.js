@@ -10,7 +10,7 @@ const MyProfile = () => {
     const { register, handleSubmit, reset } = useForm();
     const email = user?.email
     const name = user?.displayName
-    const url = `http://localhost:5000/user/${email}`
+    const url = `https://race-time-tools.herokuapp.com/user/${email}`
     const onSubmit = data => {
         const updateUser = { ...data, email, name }
         fetch(url, {

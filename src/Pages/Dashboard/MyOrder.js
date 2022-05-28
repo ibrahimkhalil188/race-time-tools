@@ -9,7 +9,7 @@ const MyOrder = () => {
 
     const [user] = useAuthState(auth);
     const email = user?.email
-    const url = `http://localhost:5000/order?email=${email}`
+    const url = `https://race-time-tools.herokuapp.com/order?email=${email}`
     const { data: myorder, refetch } = useQuery("myorder", () => fetch(url).then(res => res.json()))
     return (
         <div>

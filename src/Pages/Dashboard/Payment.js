@@ -13,7 +13,7 @@ const stripePromise = loadStripe('pk_test_51L3dQQFSCgLXqw7Ei87Y4WgyookdfFtpn7g2U
 const Payment = () => {
     const [user] = useAuthState(auth)
     const { id } = useParams()
-    const url = `http://localhost:5000/order/${id}`
+    const url = `https://race-time-tools.herokuapp.com/order/${id}`
     const { data: orderItem, isLoading } = useQuery(["orderItem", id], () => fetch(url).then(res => res.json()))
     if (isLoading) {
         return <Loading></Loading>

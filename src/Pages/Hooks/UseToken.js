@@ -7,7 +7,7 @@ const UseToken = user => {
         const email = user?.user?.email
         const currentUser = { email: email }
         if (email) {
-            const url = `http://localhost:5000/user/${email}`
+            const url = `https://race-time-tools.herokuapp.com/user/${email}`
             fetch(url, {
                 method: "PUT",
                 headers: {

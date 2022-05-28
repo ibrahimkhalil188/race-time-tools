@@ -13,7 +13,7 @@ const Purchase = () => {
     const { register, handleSubmit, reset } = useForm();
 
     const id = useParams()
-    const url = `http://localhost:5000/products/${id.id}`
+    const url = `https://race-time-tools.herokuapp.com/products/${id.id}`
     const { data: purchase, refetch } = useQuery("purchase", () => fetch(url).then(res => res.json()))
 
 
@@ -27,7 +27,7 @@ const Purchase = () => {
         const newQuantity = { quantity }
         const order = { email: data.email, productName: purchase?.name, price: price, quantity: data.quantity, phoneNumber: data.phone, address: data.address }
 
-        fetch('http://localhost:5000/order', {
+        fetch('https://race-time-tools.herokuapp.com/order', {
             method: "POST",
             headers: {
                 "content-type": "application/json"
@@ -42,7 +42,7 @@ const Purchase = () => {
 
             })
 
-        const url = `http://localhost:5000/products/${id.id}`
+        const url = `https://race-time-tools.herokuapp.com/products/${id.id}`
         fetch(url, {
             method: "PATCH",
             headers: {

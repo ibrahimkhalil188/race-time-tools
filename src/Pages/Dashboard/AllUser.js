@@ -6,10 +6,10 @@ import { toast } from 'react-toastify';
 
 const AllUser = () => {
 
-    const { data: alluser, refetch } = useQuery("alluser", () => fetch("http://localhost:5000/user").then(res => res.json()))
+    const { data: alluser, refetch } = useQuery("alluser", () => fetch("https://race-time-tools.herokuapp.com/user").then(res => res.json()))
 
     const makeAdmin = (email) => {
-        fetch(`http://localhost:5000/user/admin/${email}`, {
+        fetch(`https://race-time-tools.herokuapp.com/user/admin/${email}`, {
             method: "PUT",
             headers: {
                 "content-type": "application/json"
@@ -23,7 +23,7 @@ const AllUser = () => {
     }
 
     const deleteUser = id => {
-        fetch(`http://localhost:5000/user/${id}`, {
+        fetch(`https://race-time-tools.herokuapp.com/user/${id}`, {
             method: "DELETE",
             headers: {
                 "content-type": "application/json"

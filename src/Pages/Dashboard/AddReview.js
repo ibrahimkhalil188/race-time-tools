@@ -13,7 +13,7 @@ const AddReview = () => {
     const handleSubmit = e => {
         e.preventDefault()
         const data = { review, rating, name, image }
-        fetch('http://localhost:5000/reviews', {
+        fetch('https://race-time-tools.herokuapp.com/reviews', {
             method: "POST",
             headers: {
                 "content-type": "application/json"

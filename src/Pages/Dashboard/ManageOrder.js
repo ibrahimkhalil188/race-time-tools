@@ -3,11 +3,11 @@ import { useQuery } from 'react-query';
 import { toast } from 'react-toastify';
 
 const ManageOrder = () => {
-    const { data: allorder, refetch } = useQuery("allorder", () => fetch("http://localhost:5000/allorder").then(res => res.json()))
+    const { data: allorder, refetch } = useQuery("allorder", () => fetch("https://race-time-tools.herokuapp.com/allorder").then(res => res.json()))
 
 
     const deleteOrder = id => {
-        fetch(`http://localhost:5000/order/${id}`, {
+        fetch(`https://race-time-tools.herokuapp.com/order/${id}`, {
             method: "DELETE",
             headers: {
                 "content-type": "application/json"

@@ -7,7 +7,7 @@ import auth from '../../firebase.init';
 const Dashboard = () => {
     const [user] = useAuthState(auth)
     const email = user?.email
-    const { data: currentUser } = useQuery("currentUser", () => fetch(`http://localhost:5000/user/${email}`).then(res => res.json()))
+    const { data: currentUser } = useQuery("currentUser", () => fetch(`https://race-time-tools.herokuapp.com/user/${email}`).then(res => res.json()))
 
     const admin = (currentUser?.role === "admin")
 

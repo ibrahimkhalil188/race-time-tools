@@ -4,7 +4,7 @@ const OrderCancelModel = ({ item, refetch }) => {
     const { _id, productName } = item
 
     const handleCancel = () => {
-        const url = `http://localhost:5000/order/${_id}`
+        const url = `https://race-time-tools.herokuapp.com/order/${_id}`
         fetch(url, {
             method: "DELETE",
             headers: {

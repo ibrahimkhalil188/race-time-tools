@@ -4,7 +4,7 @@ import { toast } from 'react-toastify';
 import Loading from '../Shared/Loading';
 
 const ManageProduct = () => {
-    const { data: allItem, isLoading, refetch } = useQuery("allItem", () => fetch("http://localhost:5000/allproducts").then(res => res.json()))
+    const { data: allItem, isLoading, refetch } = useQuery("allItem", () => fetch("https://race-time-tools.herokuapp.com/allproducts").then(res => res.json()))
 
     if (isLoading) {
         return <Loading></Loading>
@@ -14,7 +14,7 @@ const ManageProduct = () => {
 
     const deleteProduct = id => {
 
-        fetch(`http://localhost:5000/allproducts/${id}`, {
+        fetch(`https://race-time-tools.herokuapp.com/allproducts/${id}`, {
             method: "DELETE",
             headers: {
                 "content-type": "application/json"
