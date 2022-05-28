@@ -1,11 +1,11 @@
 # Getting Started with Race Time Tools
 
-[Race Time Tools](https://mobile-land.netlify.app/).
+[Race Time Tools](https://race-time-tools.web.app/).
 
 
 
 
-Open [https://mobile-land.netlify.app/](https://mobile-land.netlify.app/) to view it in your browser.
+Open [https://mobile-land.netlify.app/](https://race-time-tools.web.app/) to view it in your browser.
 
 
 ## Feature of this website
